@@ -10,6 +10,7 @@ public class PruebaLibroCalificaciones {
         //Se instancia la clase LibroCalificaciones para crear el objeto libroCalificaciones
         LibroCalificaciones libro = new LibroCalificaciones("Programacion 1");
 
+
         //Se crea un objeto de la clase Scanner para obtener datos del usuario
         Scanner input = new Scanner(System.in);
 
