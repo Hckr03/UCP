@@ -1,4 +1,4 @@
-package unidad_3;
+package Unidad_3;
 
 public class Cuenta {
     private double saldo;

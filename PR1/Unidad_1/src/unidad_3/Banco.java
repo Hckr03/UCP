@@ -1,4 +1,4 @@
-package unidad_3;
+package Unidad_3;
 
 public class Banco {
     //atributo de clase osea variable

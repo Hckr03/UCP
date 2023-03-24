@@ -5,6 +5,8 @@
         <group>
             <file>file:/Users/hckr/Documents/UCP/CAL/LabCAL/src/labcal/ConnectionDB/ConnectionDB.java</file>
             <file>file:/Users/hckr/Documents/UCP/CAL/LabCAL/src/labcal/ConnectionDB/ParametersDB.java</file>
+            <file>file:/Users/hckr/Documents/UCP/CAL/LabCAL/src/labcal/ConnectionDB/ExampleConnectionDB.java</file>
+            <file>file:/Users/hckr/Documents/UCP/CAL/LabCAL/src/labcal/ConnectionDB/LaboratorioALC.java</file>
             <file>file:/Users/hckr/Documents/UCP/CAL/LabCAL/src/labcal/LabCAL.java</file>
         </group>
     </open-files>

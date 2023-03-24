@@ -1,4 +1,4 @@
-package unidad_3.tarea;
+package Unidad_3.tarea;
 
 public class Empleado {
     private String nombre;

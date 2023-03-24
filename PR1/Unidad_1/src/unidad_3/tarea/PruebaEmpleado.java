@@ -1,4 +1,4 @@
-package unidad_3.tarea;
+package Unidad_3.tarea;
 import java.util.Scanner;
 
 public class PruebaEmpleado {

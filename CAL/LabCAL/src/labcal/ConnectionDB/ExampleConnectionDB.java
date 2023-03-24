@@ -9,6 +9,6 @@ public class ExampleConnectionDB {
     
     public ExampleConnectionDB(){
         ConnectionDB.getConnection();
-        System.out.println("MSG2" + ConnectionDB.getMsg());
+        System.out.println("MSG2 " + ConnectionDB.getMsg());
     }
 }
