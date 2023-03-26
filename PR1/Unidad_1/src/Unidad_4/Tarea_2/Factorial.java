@@ -9,12 +9,9 @@ public class Factorial {
         DecimalFormat df = new DecimalFormat("###,###,###");
 
         do{
-            for (int i = 1; i <= cont; i++) {
-                factorial *= i;
-            }
+            factorial *= cont;
             System.out.printf("\nEl factorial de %d es: %s", cont, df.format(factorial));
             cont++;
-            factorial = 1;
         }while(cont <= 20);
     }
 }

@@ -22,6 +22,6 @@ public class Menor {
             }
             cont++;
         }
-        System.out.printf("El menor numero entre los %d valores introducidos es: %d", --cont, minor);
+        System.out.printf("El menor numero entre los %d valores introducidos es: %d", size, minor);
     }
 }
