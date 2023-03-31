@@ -11,16 +11,20 @@ public class Test {
 
     public Test(){
         dto = new PersonaDTO();
+        dto.setId(2);
         dto.setCedula(1135461);
-        dto.setNombres("Rigoberto");
-        dto.setApellidos("Caballero");
+        dto.setNombres("Salome");
+        dto.setApellidos("Barrios");
         dto.setDireccion("Lambare");
         
         persona = new Personas();
-        if(persona.agregarPersonas(dto)){
-            System.out.println("Registro Exitoso");
-        }else{
-            System.out.println("Registro No Exitoso");
+//        if(persona.eliminarPersona(1)){
+//            System.out.println("Registro eliminado con exitoso");
+//        }else{
+//            System.out.println("Registro no eliminado");
+//        }
+        for (PersonaDTO persona : persona.recuperarRegistros()) {
+            System.out.println("Nombre: "+persona.getNombres());
         }
     }
     

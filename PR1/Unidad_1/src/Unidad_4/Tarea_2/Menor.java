@@ -16,10 +16,9 @@ public class Menor {
         while(cont <= size){
             System.out.printf("Introduzca numero de la iteracion %d: ", cont);
             number = sc.nextInt();
-
-            if(number < minor){
-                minor = number;
-            }
+            
+            minor = minor == 0 ? number : minor;
+            minor = Math.min(number, minor);
             cont++;
         }
         System.out.printf("El menor numero entre los %d valores introducidos es: %d", size, minor);
