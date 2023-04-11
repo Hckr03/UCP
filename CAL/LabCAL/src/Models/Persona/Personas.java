@@ -1,4 +1,4 @@
-package model;
+package Models.Persona;
 
 import labcal.ConnectionDB.ConnectionDB;
 import java.sql.PreparedStatement;
