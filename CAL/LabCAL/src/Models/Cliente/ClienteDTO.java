@@ -17,6 +17,13 @@ public class ClienteDTO{
     private NacionalidadDTO nacionalidad;
     private CiudadDTO ciudad;
 
+    public ClienteDTO() {
+    }
+
+    public ClienteDTO(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -6,7 +6,7 @@ package Models.Producto;
  * @author hckr
  */
 public class TestProduct {
-    ProductosGabrielCaballero producto;
+    ProductosDTO producto;
     ProductosController controller;
     
     public TestProduct(){
@@ -57,7 +57,7 @@ public class TestProduct {
 //        }
 
 //        Validacion para recuperar registros
-        for(ProductosGabrielCaballero producto : controller.recuperarProductos()){
+        for(ProductosDTO producto : controller.recuperarProductos()){
             System.out.println("Id_gc: " + producto.getId_gc());
             System.out.println("Descripcion_gc: " + producto.getDescripcion_gc());
             System.out.println("Precio_gc: " + producto.getPrecio_gc());

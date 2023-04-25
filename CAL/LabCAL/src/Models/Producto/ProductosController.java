@@ -22,7 +22,7 @@ public class ProductosController {
         ConnectionDB.getConnection();
     }
 
-    public boolean agregarProducto(ProductosGabrielCaballero producto) {
+    public boolean agregarProducto(ProductosDTO producto) {
         try {
             sql = "INSERT INTO public.productos_gabriel_caballero(\n"
                     + "	descripcion_gc, precio_gc, cantidad_gc, iva_gc)\n"
@@ -40,7 +40,7 @@ public class ProductosController {
         return false;
     }
 
-    public boolean modificarProducto(ProductosGabrielCaballero producto) {
+    public boolean modificarProducto(ProductosDTO producto) {
         try {
             sql = "UPDATE public.productos_gabriel_caballero\n"
                     + "	SET descripcion_gc=?, precio_gc=?, cantidad_gc=?, iva_gc=?\n"
@@ -59,7 +59,7 @@ public class ProductosController {
         return false;
     }
 
-    public boolean eliminarProducto(ProductosGabrielCaballero producto) {
+    public boolean eliminarProducto(ProductosDTO producto) {
         try {
             sql = "DELETE FROM public.productos_gabriel_caballero\n"
                     + "	WHERE id_gc=?;";
@@ -73,16 +73,16 @@ public class ProductosController {
         return false;
     }
 
-    public List<ProductosGabrielCaballero> recuperarProductos() {
+    public List<ProductosDTO> recuperarProductos() {
         try {
             sql = "SELECT id_gc, descripcion_gc, precio_gc, cantidad_gc, iva_gc\n"
                     + "	FROM public.productos_gabriel_caballero;";
             ps = ConnectionDB.getConnection().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            List<ProductosGabrielCaballero> listaProductos = new ArrayList<>();
-            ProductosGabrielCaballero producto;
+            List<ProductosDTO> listaProductos = new ArrayList<>();
+            ProductosDTO producto;
             while(rs.next()){
-                producto = new ProductosGabrielCaballero();
+                producto = new ProductosDTO();
                 producto.setId_gc(rs.getInt("id_gc"));
                 producto.setDescripcion_gc(rs.getString("descripcion_gc"));
                 producto.setPrecio_gc(rs.getInt("precio_gc"));

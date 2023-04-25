@@ -5,12 +5,19 @@ package Models.Producto;
  *
  * @author hckr
  */
-public class ProductosGabrielCaballero {
+public class ProductosDTO {
     private Integer id_gc;
     private String descripcion_gc;
     private Integer precio_gc;
     private Integer cantidad_gc;
     private Integer iva_gc;
+
+    public ProductosDTO() {
+    }
+
+    public ProductosDTO(Integer id_gc) {
+        this.id_gc = id_gc;
+    }
 
     public Integer getId_gc() {
         return id_gc;
