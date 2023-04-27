@@ -26,9 +26,11 @@ public class ArregloBidimensional {
             arreglo[3][4] += arreglo[i][4];
         }
         System.out.println("\nArreglo bidimensional de 4 x 5");
-        for (int i = 0; i < arreglo.length; i++) {
-            for (int j = 0; j < arreglo[i].length; j++) {
-                System.out.printf("| %d |", arreglo[i][j]);
+        //antes tenía el for normal, pero lo cambié por un foreach que es el for mejorado
+        //asi tengo anotado y puedo ir viendo para recordar como recorrer un vector bidimensional
+        for (int[] ints : arreglo) {
+            for (int anInt : ints) {
+                System.out.printf("| %d |", anInt);
             }
             System.out.println();
         }

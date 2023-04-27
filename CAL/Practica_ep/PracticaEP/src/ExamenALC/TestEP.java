@@ -51,7 +51,11 @@ public class TestEP {
 
         //para recuperar registros
         for (AlumnosDTO alumno : alumno.recuperarAlumnos()) {
+            System.out.println("ID: "+alumno.getId());
             System.out.println("Nombre: "+alumno.getNombres());
+            System.out.println("Apellido: "+alumno.getApellidos());
+            System.out.println("C.I.: "+alumno.getNroCedula());
+            System.out.println("Materia: "+alumno.getMateria().getId());
         }
     }
 
