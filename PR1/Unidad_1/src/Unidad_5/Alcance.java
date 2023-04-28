@@ -7,7 +7,7 @@ public class Alcance{
     private static int x = 1;
 
     public static void main(String[] args) {
-        System.out.println("" + x);
+        System.out.println(String.valueOf(x));
         int x = 5;
         System.out.printf("La x local en main es %d\n", x);
         usarVariableLocal();

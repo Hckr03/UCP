@@ -1,8 +1,4 @@
-package Unidad_2;
-
-/**
- * @author hckr
- */
+package Unidad_2;/** * @author hckr */
 //Decalaracion de una clase con un metodo
 public class LibroCalificaciones {
     private String nombreMateria;
@@ -11,7 +7,7 @@ public class LibroCalificaciones {
         this.nombreMateria = nombreMateria;
     }
 
-    public LibroCalificaciones(){};
+    public LibroCalificaciones(){}
 
     //muestra un mensaje de bienvenida
 //    public void mostrarMensaje(){

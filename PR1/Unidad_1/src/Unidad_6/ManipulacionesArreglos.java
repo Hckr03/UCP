@@ -9,7 +9,7 @@ public class ManipulacionesArreglos {
     public static void main(String[] args) {
         double[] arregloDouble = {8.4, 9.3, 0.2, 7.9, 3.4};
         Arrays.sort(arregloDouble);
-        System.out.printf("\narregloDouble:");
+        System.out.print("\narregloDouble:");
 
         for (double valor : arregloDouble) {
             System.out.printf("%.1f", valor);

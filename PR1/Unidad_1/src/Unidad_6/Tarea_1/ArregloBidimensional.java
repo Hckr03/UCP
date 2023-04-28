@@ -30,7 +30,7 @@ public class ArregloBidimensional {
         //asi tengo anotado y puedo ir viendo para recordar como recorrer un vector bidimensional
         for (int[] ints : arreglo) {
             for (int anInt : ints) {
-                System.out.printf("| %d |", anInt);
+                System.out.printf("| %d |\t", anInt);
             }
             System.out.println();
         }
