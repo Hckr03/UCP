@@ -6,9 +6,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author hckr
- */
 public class ConnectionDB {
     private static Connection connection;
     private static String msg;
