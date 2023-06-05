@@ -10,6 +10,9 @@ import javax.swing.JOptionPane;
 public class ConvertidorTemperatura extends javax.swing.JFrame {
 
     private static final String listSalida[] = {"Centigrados", "Fahrenheit", "Kelvin"};
+    private Celsius celsius = new Celsius();
+    private Kelvin kelvin = new Kelvin();
+    private Fahrenheit fahrenheit = new Fahrenheit();
     /**
      * Creates new form ConvertidorTemperatura
      */
@@ -27,6 +30,9 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
         bgEntrada = new javax.swing.ButtonGroup();
         bgSalida = new javax.swing.ButtonGroup();
         bgpeEntrada = new javax.swing.ButtonGroup();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
         pConvertidor = new javax.swing.JPanel();
         pEntrada = new javax.swing.JPanel();
         rbpeCentigrados = new javax.swing.JRadioButton();
@@ -51,6 +57,15 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
         rbsCentigrados = new javax.swing.JRadioButtonMenuItem();
         rbsFahrenheit = new javax.swing.JRadioButtonMenuItem();
         rbsKelvin = new javax.swing.JRadioButtonMenuItem();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Convertidor de Temperatura");
@@ -410,7 +425,10 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bgpeEntrada;
     private javax.swing.JButton btnConvertir;
     private javax.swing.JComboBox<String> cbSalida;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JLabel lbResultado;
     private javax.swing.JMenu mArchivo;
     private javax.swing.JMenu mConvertidor;
@@ -514,6 +532,7 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
     
     private void cbControlSalidaSelected(){
         String cbSelected = cbSalida.getSelectedItem().toString();
+        
         if(cbSelected.equals(rbsCentigrados.getText())){
             rbsCentigrados.setSelected(true);
             return;
@@ -536,103 +555,55 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
         if(!txtTemperatura.getText().isEmpty()){
             numero = Double.valueOf(txtTemperatura.getText().replaceAll(",","."));
         }else{
-            JOptionPane.showMessageDialog(null, "No debe dejar vacio el campo a calcular", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(ConvertidorTemperatura.this, "No debe dejar vacio el campo a calcular", "Error!", JOptionPane.ERROR_MESSAGE);
             txtTemperatura.requestFocus();
             return;
         }
         
         //calculate celsius to kelvin || kelvin to celsius
         if(rbpeCentigrados.isSelected() && cbSelected.equals("kelvin")){
-           convertCelsiusKelvin(numero);
+           lbResultado.setText(celsius.convertCelsiusKelvin(numero) + " K.");
            return;
         }else if(rbpeKelvin.isSelected() && cbSelected.equals("centigrados")){
-           convertKelvinCelsius(numero);
+           lbResultado.setText(kelvin.convertKelvinCelsius(numero)+ " °C.");
            return;
         }
         
         //calculate celsius to fahrenheit || fahrenheit to celsius
         if(rbpeCentigrados.isSelected() && cbSelected.equals("fahrenheit")){
-           convertCelsiusFahrenheit(numero);
+           lbResultado.setText(celsius.convertCelsiusFahrenheit(numero) + " °F");
            return;
         }else if(rbpeFahrenheit.isSelected() && cbSelected.equals("centigrados")){
-            convertFahrenheitCelsius(numero);
+            lbResultado.setText(fahrenheit.convertFahrenheitCelsius(numero) + " °C.");
             return;
         }
         
         //calculate fahrenheit to kelvin || kelvin to fahrenheit
         if(rbpeFahrenheit.isSelected() && cbSelected.equals("kelvin")){
-           convertFahrenheitKelvin(numero);
+           lbResultado.setText(fahrenheit.convertFahrenheitKelvin(numero) + " K.");
            return;
         }else if(rbpeKelvin.isSelected() && cbSelected.equals("fahrenheit")){
-            convertKelvinFahrenheit(numero);
+            lbResultado.setText(kelvin.convertKelvinFahrenheit(numero) + " °F");
             return;
         }
         
         //Show error message if they're equals
         showMessageError();
     }
-    
-    private void convertCelsiusKelvin(Double numero){
-        String aux;
-        Double resultado;
-        resultado = numero + 273.15;
-            aux = String.format("%.2f", resultado);
-            lbResultado.setText(aux + " K.");
-    }
-    
-    private void convertKelvinCelsius(Double numero){
-        String aux;
-        Double resultado;
-        resultado = numero - 273.15;
-            aux = String.format("%.2f", resultado);
-            lbResultado.setText(aux + " K.");
-    }
-    
-    private void convertCelsiusFahrenheit(Double numero){
-        String aux;
-        Double resultado;
-        resultado = ((numero * 9) / 5) + 32;
-           aux = String.format("%.2f", resultado);
-           lbResultado.setText(aux + " °F.");
-    }
-    
-    private void convertFahrenheitCelsius(Double numero){
-        String aux;
-        Double resultado;
-        resultado = ((numero - 32) * 5) / 9 ;
-           aux = String.format("%.2f", resultado);
-           lbResultado.setText(aux + " °C.");
-    }
-    
-    private void convertFahrenheitKelvin(Double numero){
-        String aux;
-        Double resultado;
-        resultado = (((numero - 32) * 5) / 9) + 273.15;
-           aux = String.format("%.2f", resultado);
-           lbResultado.setText(aux + " K.");
-    }
-    
-    private void convertKelvinFahrenheit(Double numero){
-        String aux;
-        Double resultado;
-        resultado = (((numero - 273.15) * 9) / 5 ) + 32;
-           aux = String.format("%.2f", resultado);
-           lbResultado.setText(aux + " °F.");
-    }
-    
+            
     private void showMessageError(){       
         if(rbpeCentigrados.getText().equals(cbSalida.getSelectedItem().toString())){
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(ConvertidorTemperatura.this, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         if(rbpeFahrenheit.getText().equals(cbSalida.getSelectedItem().toString())){
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(ConvertidorTemperatura.this, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
             return;
         }
                 
         if(rbpeKelvin.getText().equals(cbSalida.getSelectedItem().toString())){
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(ConvertidorTemperatura.this, "Debe seleccionar una entrada y una salida distintas", "Error!", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
