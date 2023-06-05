@@ -3,7 +3,7 @@ package Unidad_7.Tarea_1;
 public class CuentaDeAhorros_v2 {
     private static double tasaInteresAnual;
     private double saldoAhorros;
-    int i =1;
+    int i = 1;
 
     public double calcularInteresMensual(){
         return (saldoAhorros * tasaInteresAnual)/12;
@@ -19,9 +19,8 @@ public class CuentaDeAhorros_v2 {
         System.out.printf("Mes %s -> %.2f + %.2f = %.2f\n",
                 i++, saldoAhorros,
                 calcularInteresMensual(),
-                getSaldoAhorros() + calcularInteresMensual()
+                saldoAhorros += calcularInteresMensual()
         );
-        saldoAhorros += calcularInteresMensual();
     }
 
     public double getSaldoAhorros() {

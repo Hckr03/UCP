@@ -25,6 +25,4 @@ public class CuentaDeAhorros {
     public void setSaldoAhorros(double saldoAhorros) {
         this.saldoAhorros = saldoAhorros;
     }
-
-
 }
