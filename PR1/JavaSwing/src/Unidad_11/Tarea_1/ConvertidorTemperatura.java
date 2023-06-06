@@ -114,7 +114,7 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
             pEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pEntradaLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(rbpeCentigrados, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addComponent(rbpeCentigrados, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
                 .addComponent(rbpeFahrenheit, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
@@ -145,7 +145,7 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
             .addGroup(pSalidaLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(cbSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         pTemperatura.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Temperatura"));
@@ -194,7 +194,7 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
                     .addComponent(lbResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnConvertir)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pConvertidorLayout = new javax.swing.GroupLayout(pConvertidor);
@@ -462,7 +462,6 @@ public class ConvertidorTemperatura extends javax.swing.JFrame {
        bgSalida.add(rbsCentigrados);
        bgSalida.add(rbsFahrenheit);
        bgSalida.add(rbsKelvin);
-       
        
        //RadioButtonGroup PanelEntrada
        bgpeEntrada.add(rbpeCentigrados);
