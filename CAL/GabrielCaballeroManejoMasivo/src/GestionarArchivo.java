@@ -20,7 +20,8 @@ public class GestionarArchivo {
     
     public void procesarArchivo(){
         try {
-            urlArchivo = "/Users/hckr/Documents/UCP/CAL/GabrielCaballeroManejoMasivo/pytyvo.csv";
+            urlArchivo = "D:\\Columbia\\Tercer año\\Primer semestre\\UCP\\UCP\\CAL\\GabrielCaballeroManejoMasivo\\pytyvo.csv";
+//            urlArchivo = "/Users/hckr/Documents/UCP/CAL/GabrielCaballeroManejoMasivo/pytyvo.csv";
             archivo = new File(urlArchivo);
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
@@ -34,7 +35,7 @@ public class GestionarArchivo {
                     d = linea.split(";");
                     if (d.length == 4) {
                         pytyvo = new Pytyvo();
-                        pytyvo.setNroCedula(Integer.parseInt( d[0] ) );
+                        pytyvo.setNroCedula(Integer.valueOf( d[0] ) );
                         pytyvo.setNombresApellidos(d[1]);
                         pytyvo.setDepartamentos(d[2]);
                         pytyvo.setDistricto(d[3]);
@@ -53,8 +54,8 @@ public class GestionarArchivo {
     
         public void procesarListaArchivo(){
         try {
-           // urlArchivo = "C:\\archivos_alc_sl\\pytyvo-lista01-2020-04-29 - copia.csv";
-            urlArchivo = "/Users/hckr/Documents/UCP/CAL/GabrielCaballeroManejoMasivo/pytyvo.csv";
+            urlArchivo = "D:\\Columbia\\Tercer año\\Primer semestre\\UCP\\UCP\\CAL\\GabrielCaballeroManejoMasivo\\pytyvo.csv";
+//            urlArchivo = "/Users/hckr/Documents/UCP/CAL/GabrielCaballeroManejoMasivo/pytyvo.csv";
             archivo = new File(urlArchivo);
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
@@ -65,11 +66,11 @@ public class GestionarArchivo {
             while ( (linea = br.readLine()) != null)  {                
 //                System.out.println("Linea " + linea);
                 if (c > 1) {
-                   // System.out.println("Linea " + c);
+                    System.out.println("Linea " + c);
                     d = linea.split(";");
                     if (d.length == 4) {
                         pytyvo = new Pytyvo();
-                        pytyvo.setNroCedula(Integer.parseInt( d[0] ) );
+                        pytyvo.setNroCedula(Integer.valueOf( d[0] ) );
                         pytyvo.setNombresApellidos(d[1]);
                         pytyvo.setDepartamentos(d[2]);
                         pytyvo.setDistricto(d[3]);

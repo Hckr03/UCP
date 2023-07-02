@@ -32,7 +32,7 @@ public class GestionPytyvo {
         }
     }
     
-    public void agregar (List<Pytyvo> lista){
+    public void agregar(List<Pytyvo> lista){
         sql = """
               INSERT INTO public."GestionArchivo"(
               \t"nroCedula", "nombresApellidos", departamentos, distritos)
